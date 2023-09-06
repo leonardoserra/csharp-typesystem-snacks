@@ -23,12 +23,32 @@ namespace csharp_typesystem_snacks
     {
         static void Main(string[] args)
         {
-            Console.Write($"Digita il numero dello snack che vuoi eseguire da 1 a 10: ");
+            Console.WriteLine($"Digita il numero dello snack che vuoi eseguire da 1 a 10: ");
+            Console.WriteLine();
+
+            string[] menuSnacks =
+            {
+                "Snack 1: L’utente inserisce due numeri in successione.\n\t Il software stampa il maggiore.\n",
+                "Snack 2 : L’utente inserisce due parole in successione.\n\t Il software stampa prima la parola più corta, poi la parola più lunga.\n",
+                "Snack 3: Il software deve chiedere per 10 volte all’utente di inserire un numero.\n\t Il programma stampa la somma di tutti i numeri inseriti.\n",
+                "Snack 4: Calcola la somma e la media dei numeri da 2 a 10.",
+                "Snack 5: Il software chiede all’utente di inserire un numero.\n\t Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo.\n",
+                "Snack 6: In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby.\n\t Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.\n",
+                "Snack 7: Crea un array vuoto. Chiedi per 6 volte all’utente di inserire un numero,\n\t se è dispari inseriscilo nell’array.\n",
+                "Snack 8: Crea un array di numeri interi e fai la somma di tutti gli\n\t elementi che sono in posizione dispari.\n",
+                "Snack 9: Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.\n\t Continua a chiedere i numeri all’utente e a inserirli nell’array,\n\t fino a quando la somma degli elementi è minore di 50.\n",
+                "Snack 10: Fai inserire un numero, che chiameremo N, all’utente. Genera N array,\n\t  ognuno formato da 10 numeri casuali tra 1 e 100. Ogni volta che ne crei uno, stampalo a schermo.\n"
+            };
+            foreach ( string snack in menuSnacks ) {
+                Console.WriteLine( snack );
+            }
+            Console.WriteLine();
+            Console.Write("Digita il numero: ");
             int snackToExecute = int.Parse(Console.ReadLine());
-            //Snack 1: L’utente inserisce due numeri in successione.Il software stampa il maggiore.  
             switch (snackToExecute)
             {
                 case 1:
+                    //Snack 1: L’utente inserisce due numeri in successione.Il software stampa il maggiore.  
                     Console.WriteLine($"Snack 1: comparatore di maggioranza.");
 
                     try
