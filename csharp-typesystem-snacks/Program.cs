@@ -124,7 +124,32 @@ namespace csharp_typesystem_snacks
             {
                 Console.WriteLine("Non mettere valori nulli, riavvia");
             }
-            
+
+
+            //Snack 4: Calcola la somma e la media dei numeri da 2 a 10.
+
+            Console.WriteLine();
+            Console.WriteLine($"Snack 4: Calcolo di somma e media dei numeri da 2 a 10");
+
+            try
+            {
+                int sum = 0;
+                int[] numbers = {2,3,4,5,6,7,8,9,10};
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    sum += numbers[i];
+                }
+                int average = sum/numbers.Length;
+                Console.WriteLine($"la somma dei valori è {sum}");
+                Console.WriteLine($"la media dei valori è {average}");
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Qualcosa è andato storto.. riavvia");
+            }
+
         }
     }
 }
