@@ -22,8 +22,12 @@ namespace csharp_typesystem_snacks
         {
 
             //Snack 1: L’utente inserisce due numeri in successione.Il software stampa il maggiore.  
+            
+            Console.WriteLine($"Snack 1: comparatore di maggioranza.");
+
             try
             {
+
                 int firstNumber;
                 int secondNumber;
                 Console.Write("Inserisci il primo numero intero e premi invio: ");
@@ -50,6 +54,55 @@ namespace csharp_typesystem_snacks
             }
 
 
+            //Snack 2 : L’utente inserisce due parole in successione.
+            //Il software stampa prima la parola più corta, poi la parola più lunga.
+            Console.WriteLine($"Snack 2: Quale parola è la piú lunga?");
+
+            try
+            {
+                string firstString;
+                string secondString;
+                int firstStringLength;
+                int secondStringLenght;
+                Console.Write("Inserisci la prima parola o frase e premi invio: ");
+                firstString = Console.ReadLine();
+                Console.Write("Inserisci la seconda parola o frase e premi invio: ");
+                secondString = Console.ReadLine();
+                if(firstString.Length >= 0)
+                {
+                    firstStringLength = firstString.Length;
+                }
+                else
+                {
+                    firstStringLength = 0;
+                }
+
+                if (secondString.Length >= 0)
+                {
+                    secondStringLenght = secondString.Length;
+                }
+                else
+                {
+                    secondStringLenght = 0;
+                }
+
+                if (firstStringLength < secondStringLenght)
+                {
+                    Console.WriteLine($"la parola o frase piú lunga è: {secondString}");
+                }
+                else if (firstStringLength == secondStringLenght)
+                {
+                    Console.WriteLine($"Le parole o frasi inserite hanno la stessa lunghezza in caratteri(anche lo spazio è contato)");
+                }
+                else
+                {
+                    Console.WriteLine($"la parola o frase piú lunga è: {firstString}");
+                }
+            }
+            catch (Exception e){
+                Console.WriteLine("Riavvia il programma e inserisci qualcosa, i valori nulli non valgono");
+
+            }
 
         }
     }
