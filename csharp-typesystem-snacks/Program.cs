@@ -325,7 +325,35 @@ namespace csharp_typesystem_snacks
                     break;
 
                 case 10:
+                    //Snack 10: Fai inserire un numero, che chiameremo N, all’utente.
+                    //Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+                    //Ogni volta che ne crei uno, stampalo a schermo.
+                    Console.WriteLine("Generatore di Liste!");
+                    try
+                    {
+                        Console.WriteLine("Ciao mitico, quante liste generiamo oggi? Digita il numero che vuoi (senza fare esplodere il computer magari..)");
+                        uint N = uint.Parse(Console.ReadLine());
+                        Random rnd = new Random();
+                        for (int i = 0; i < N ; i++)
+                        {
+                            int[] numbers = new int[10];
+                            for(int c = 0; c < numbers.Length; c++)
+                            {
+                                numbers[c] = rnd.Next(1, 100);
+                            }
+                            Console.Write($"Lista n.{i + 1}: ");
+                            foreach (int number in numbers)
+                            {
+                                Console.Write($"{number} ");
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("Grazie e alla prossima!");
 
+                    }catch (Exception e)
+                    {
+                        Console.WriteLine("Inserisci solo numeri interi please");
+                    }
                     break;
 
                 default:
