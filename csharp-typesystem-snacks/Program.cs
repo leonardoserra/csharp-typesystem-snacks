@@ -22,12 +22,34 @@ namespace csharp_typesystem_snacks
         {
 
             //Snack 1: L’utente inserisce due numeri in successione.Il software stampa il maggiore.  
-            int firstNumber;
-            int secondNumber;
-            Console.Write("Inserisci il primo numero intero e premi invio: ");
-            firstNumber = int.Parse(Console.ReadLine()); 
-            Console.Write("Inserisci il secondo numero intero e premi invio: ");
-            secondNumber = int.Parse(Console.ReadLine());
+            try
+            {
+                int firstNumber;
+                int secondNumber;
+                Console.Write("Inserisci il primo numero intero e premi invio: ");
+                firstNumber = int.Parse(Console.ReadLine());
+                Console.Write("Inserisci il secondo numero intero e premi invio: ");
+                secondNumber = int.Parse(Console.ReadLine());
+
+                if (firstNumber < secondNumber)
+                {
+                    Console.WriteLine($"il numero con il valore piú alto è il: {secondNumber}");
+                }
+                else if (firstNumber == secondNumber)
+                {
+                    Console.WriteLine($"I numeri inseriti hanno lo stesso valore");
+                }
+                else
+                {
+                    Console.WriteLine($"il numero con il valore piú alto è il: {firstNumber}");
+                }
+
+            }catch (Exception e)
+            {
+                Console.WriteLine("Riavvia il programma e inserisci un numero valido");
+            }
+
+
 
         }
     }
