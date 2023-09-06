@@ -150,6 +150,36 @@ namespace csharp_typesystem_snacks
                 Console.WriteLine("Qualcosa è andato storto.. riavvia");
             }
 
+
+
+            //Snack 5: Il software chiede all’utente di inserire un numero.
+            //Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo.
+
+            Console.WriteLine();
+            Console.WriteLine($"Snack 5: Numero Pari or next");
+
+            try
+            {
+
+                Console.Write($"Inserisci un numero e vediamo se è pari: ");
+                int number = int.Parse(Console.ReadLine());
+                if(number % 2==0)
+                {
+                    Console.WriteLine(number);
+                }
+                else
+                {
+                    Console.Write($"Il numero inserito non è pari. Inserisci un altro numero e stampiamolo: ");
+                    number = int.Parse(Console.ReadLine());
+                    Console.WriteLine(number);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Inserisci un valore valido, riavvia");
+            }
+
         }
     }
 }
