@@ -60,7 +60,9 @@ namespace csharp_typesystem_snacks
                             int firstNumber;
                             int secondNumber;
                             Console.Write("Inserisci il primo numero intero e premi invio: ");
-                            firstNumber = int.Parse(Console.ReadLine());
+                            //firstNumber = int.Parse(Console.ReadLine());
+                            bool success = int.TryParse(Console.ReadLine(), out firstNumber);
+                            Console.Write(success);
                             Console.Write("Inserisci il secondo numero intero e premi invio: ");
                             secondNumber = int.Parse(Console.ReadLine());
 
@@ -317,7 +319,7 @@ namespace csharp_typesystem_snacks
                         //Snack 9: Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
                         //Continua a chiedere i numeri all’utente e a inserirli nell’array,
                         //fino a quando la somma degli elementi è minore di 50.
-                        Console.WriteLine("Somma ridotta, se la somma degli elementi ");
+                        Console.WriteLine("Somma ridotta, se la somma degli elementi è inferiore a 50 potrai uscire dal ciclo infinito!\n Il valore iniziale è 50 piu il valore che inserisci tu! ");
                         try
                         {
                             int[] lowNumbersValue = new int[12];
@@ -326,8 +328,14 @@ namespace csharp_typesystem_snacks
 
                             do
                             {
-                                Console.WriteLine("Digita un numero intero");
+                                Console.WriteLine($"attualmente la somma degli elementi è {sum}");
+                                Console.WriteLine("Digita un numero intero da aggiungere alla somma");
                                 lowNumbersValue[i] = int.Parse(Console.ReadLine());
+                                foreach (int number in lowNumbersValue)
+                                {
+                                    sum = sum + number;
+                                }
+
                                 if (i < lowNumbersValue.Length - 1)
                                 {
                                     i++;
@@ -336,12 +344,8 @@ namespace csharp_typesystem_snacks
                                 {
                                     i = 0;
                                 }
-                                foreach (int number in lowNumbersValue)
-                                {
-                                    sum += number;
-                                }
                             } while (sum >= 50);
-                            Console.WriteLine("Fine! La somma dei valori è {sum}");
+                            Console.WriteLine($"Fine! La somma dei valori è {sum}");
                         }
                         catch (Exception e)
                         {
