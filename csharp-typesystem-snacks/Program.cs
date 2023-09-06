@@ -15,6 +15,7 @@ POSSIBILE BONUS:
 Creare un menù dove mostro gli snacks all'utente e chiedo quale vuole eseguire. Una volta la scelta il programma esegue il snack corrispondente.
  */
 using System;
+using System.Xml.Linq;
 
 namespace csharp_typesystem_snacks
 {
@@ -287,6 +288,39 @@ namespace csharp_typesystem_snacks
                     break;
 
                 case 9:
+                    //Snack 9: Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
+                    //Continua a chiedere i numeri all’utente e a inserirli nell’array,
+                    //fino a quando la somma degli elementi è minore di 50.
+                    Console.WriteLine("Somma ridotta, se la somma degli elementi ");
+                    try
+                    {
+                        int[] lowNumbersValue = new int[12];
+                        int sum = 50;
+                        int i = 0;
+                      
+                        do
+                        {
+                            Console.WriteLine("Digita un numero intero");
+                            lowNumbersValue[i] = int.Parse(Console.ReadLine());
+                            if (i < lowNumbersValue.Length - 1)
+                            {
+                                i++;
+                            }
+                            else
+                            {
+                                i = 0;
+                            }
+                            foreach(int number in lowNumbersValue)
+                            {
+                                sum += number;
+                            }
+                        } while (sum >= 50);
+                        Console.WriteLine("Fine! La somma dei valori è {sum}");
+                    }
+                    catch( Exception e)
+                    {
+                        Console.WriteLine("Inserisci valori validi");
+                    }
 
                     break;
 
