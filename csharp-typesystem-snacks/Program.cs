@@ -56,6 +56,7 @@ namespace csharp_typesystem_snacks
 
             //Snack 2 : L’utente inserisce due parole in successione.
             //Il software stampa prima la parola più corta, poi la parola più lunga.
+            Console.WriteLine();
             Console.WriteLine($"Snack 2: Quale parola è la piú lunga?");
 
             try
@@ -101,9 +102,29 @@ namespace csharp_typesystem_snacks
             }
             catch (Exception e){
                 Console.WriteLine("Riavvia il programma e inserisci qualcosa, i valori nulli non valgono");
-
             }
 
+
+            //Snack 3: Il software deve chiedere per 10 volte all’utente di inserire un numero.
+            //Il programma stampa la somma di tutti i numeri inseriti.
+            Console.WriteLine();
+            Console.WriteLine($"Snack 3: Somma di 10 valori");
+
+            try
+            {
+                int sum = 0;
+                for (int i = 0; i < 10; i++) {
+                    Console.WriteLine($"Inserisci il valore num: {i + 1}");
+                    sum += int.Parse(Console.ReadLine());
+                }
+                Console.WriteLine($"la somma dei valori inseriti è {sum}");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Non mettere valori nulli, riavvia");
+            }
+            
         }
     }
 }
