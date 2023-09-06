@@ -233,28 +233,57 @@ namespace csharp_typesystem_snacks
                     //Snack 7: Crea un array vuoto. Chiedi per 6 volte all’utente di inserire un numero,
                     //se è dispari inseriscilo nell’array.
                     Console.WriteLine("Ciao carissimo, inseriamo qualche numero in un array... ma solo se è dispari!");
-                    int[] oddNumbersArray = new int[6];
-                    for(int i = 0; i < oddNumbersArray.Length; i++)
-                    {
-                        Console.WriteLine($"Tentativi rimasti: {oddNumbersArray.Length - i}");
-
-                        Console.Write($"Digita un numero: ");
-                        int inputNumber = int.Parse(Console.ReadLine());
-                        if (inputNumber % 2 != 0)
+                    try {
+                        int[] oddNumbersArray = new int[6];
+                        for (int i = 0; i < oddNumbersArray.Length; i++)
                         {
-                            oddNumbersArray[i] = inputNumber;
+                            Console.WriteLine($"Tentativi rimasti: {oddNumbersArray.Length - i}");
+
+                            Console.Write($"Digita un numero: ");
+                            int inputNumber = int.Parse(Console.ReadLine());
+                            if (inputNumber % 2 != 0)
+                            {
+                                oddNumbersArray[i] = inputNumber;
+                            }
+
                         }
-                         
-                    }
-                    Console.WriteLine("Fine! La lista è piena, eccola di seguito: ");
-                    foreach (int number in oddNumbersArray)
+                        Console.WriteLine("Fine! La lista è piena, eccola di seguito: ");
+                        foreach (int number in oddNumbersArray)
+                        {
+                            Console.Write($"{number} ");
+                        }
+
+                    }catch(Exception e)
                     {
-                        Console.Write($"{number} ");
+                        Console.WriteLine("Inserisci valori validi...riavvia il programma");
                     }
                     break;
 
                 case 8:
+                    //Snack 8: Crea un array di numeri interi e fai la somma di tutti gli elementi che
+                    //sono in posizione dispari.
+                    Console.WriteLine("La somma dei numeri con indice dispari della lista seguente ");
+                    try
+                    {
 
+                        int[] intNumbers = { 2, 45, 654, 2, 9, 78, 1, 5, 6, 44, 83, 5, 24, 7, 96, 4, 0 };
+                        int sum = 0;
+                        foreach (int number in intNumbers)
+                        {   
+                            Console.Write($"{number} ");
+                            
+                            if(number % 2 != 0)
+                            {
+                                sum += number;
+                            }
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine($"é: {sum}");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Qualcosa è andato storto... riavvia");
+                    }
                     break;
 
                 case 9:
