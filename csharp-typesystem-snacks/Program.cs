@@ -34,7 +34,7 @@ namespace csharp_typesystem_snacks
             {
                 Console.Write("Inserisci il primo numero intero e premi invio: ");
                 if(typeof)
-                primoNumero = int.Parse(Console.ReadLine());
+                primoNumero = int.Parse(Console.ReadLine()); 
 
             }catch(Exception ex) { 
                 while (typeof(primoNumero) isNull)
