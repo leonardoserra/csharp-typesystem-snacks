@@ -14,6 +14,8 @@ Buon lavoro!
 POSSIBILE BONUS:
 Creare un menù dove mostro gli snacks all'utente e chiedo quale vuole eseguire. Una volta la scelta il programma esegue il snack corrispondente.
  */
+using System;
+
 namespace csharp_typesystem_snacks
 {
     internal class Program
@@ -174,6 +176,35 @@ namespace csharp_typesystem_snacks
                     Console.WriteLine(number);
 
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Inserisci un valore valido, riavvia");
+            }
+
+            //Snack 6: In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby.
+            //Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.
+
+            Console.WriteLine();
+            Console.WriteLine($"Snack 6: Lista invitati.");
+
+            try
+            {
+                string[] whiteList = { "Giannino", "Gregory", "Poldo", "Eufemio", "Markus", "Gerry Scotty", "Il Campione", "Lucius", "Franco" };
+                Console.Write($"Devo verificare che tu sia invitato alla festa..Come ti chiami? ");
+                string name = Console.ReadLine();
+                foreach (string nameInList in whiteList) { 
+                    if(nameInList == name)
+                    {
+                        Console.WriteLine($"Benvenuto mr.{name}!!! La stavamo aspettando con ansia e un brivido di eccitazione!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Mi spiace sig.{name}. Non è presente tra gli invitati, sono costretto ad allontanarla. (In realtà non gli dispiace)");
+                        break;
+                    }
+                }
+                
             }
             catch (Exception e)
             {
