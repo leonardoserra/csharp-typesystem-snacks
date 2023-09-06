@@ -13,13 +13,6 @@
 Buon lavoro!
 POSSIBILE BONUS:
 Creare un menù dove mostro gli snacks all'utente e chiedo quale vuole eseguire. Una volta la scelta il programma esegue il snack corrispondente.
- 
- 
- 
- 
- 
- 
- 
  */
 namespace csharp_typesystem_snacks
 {
@@ -28,32 +21,13 @@ namespace csharp_typesystem_snacks
         static void Main(string[] args)
         {
 
-            //Snack 1: L’utente inserisce due numeri in successione.Il software stampa il maggiore.
-            int primoNumero;
-            try
-            {
-                Console.Write("Inserisci il primo numero intero e premi invio: ");
-                if(typeof)
-                primoNumero = int.Parse(Console.ReadLine()); 
-
-            }catch(Exception ex) { 
-                while (typeof(primoNumero) isNull)
-                {
-                     Console.Write("Inserisci solo numeri interi: ");
-                     primoNumero = int.Parse(Console.ReadLine());
-                }
-            }
-
-
-
-            Console.WriteLine();
-            Console.Write("Inserisci il secondo numero intero: ");
-
-
-
-
-
-
+            //Snack 1: L’utente inserisce due numeri in successione.Il software stampa il maggiore.  
+            int firstNumber;
+            int secondNumber;
+            Console.Write("Inserisci il primo numero intero e premi invio: ");
+            firstNumber = int.Parse(Console.ReadLine()); 
+            Console.Write("Inserisci il secondo numero intero e premi invio: ");
+            secondNumber = int.Parse(Console.ReadLine());
 
         }
     }
