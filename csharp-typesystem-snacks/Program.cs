@@ -173,6 +173,7 @@ namespace csharp_typesystem_snacks
                         try
                         {
                             int sum = 0;
+                         
                             int[] numbers = { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
                             for (int i = 0; i < numbers.Length; i++)
                             {
@@ -235,16 +236,20 @@ namespace csharp_typesystem_snacks
                             string[] whiteList = { "Giannino", "Gregory", "Poldo", "Eufemio", "Markus", "Gerry Scotty", "Il Campione", "Lucius", "Franco" };
                             Console.Write($"Devo verificare che tu sia invitato alla festa..Come ti chiami? ");
                             string name = Console.ReadLine();
-                            foreach (string nameInList in whiteList)
+                            for (int i = 0 ;i < whiteList.Length; i++)
                             {
-                                if (nameInList == name)
+                                if (whiteList[i] == name)
                                 {
                                     Console.WriteLine($"Benvenuto mr.{name}!!! La stavamo aspettando con ansia e un brivido di eccitazione!");
+                                    break;
+                                }
+                                else if(whiteList[i] != name && i < whiteList.Length - 1)
+                                {
+                                    continue;
                                 }
                                 else
                                 {
                                     Console.WriteLine($"Mi spiace sig.{name}. Non è presente tra gli invitati, sono costretto ad allontanarla. (In realtà non gli dispiace)");
-                                    break;
                                 }
                             }
 
@@ -297,6 +302,7 @@ namespace csharp_typesystem_snacks
 
                             int[] intNumbers = { 2, 45, 654, 2, 9, 78, 1, 5, 6, 44, 83, 5, 24, 7, 96, 4, 0 };
                             int sum = 0;
+                            int sum2 = 0;
                             foreach (int number in intNumbers)
                             {
                                 Console.Write($"{number} ");
@@ -306,8 +312,13 @@ namespace csharp_typesystem_snacks
                                     sum += number;
                                 }
                             }
+                            for (int i = 1; i < intNumbers.Length; i+=2)
+                            {
+                                sum2 += intNumbers[i];
+                            }
                             Console.WriteLine();
                             Console.WriteLine($"é: {sum}");
+                            Console.WriteLine($"é: {sum2}");
                         }
                         catch (Exception e)
                         {
@@ -330,11 +341,10 @@ namespace csharp_typesystem_snacks
                             {
                                 Console.WriteLine($"attualmente la somma degli elementi è {sum}");
                                 Console.WriteLine("Digita un numero intero da aggiungere alla somma");
-                                lowNumbersValue[i] = int.Parse(Console.ReadLine());
-                                foreach (int number in lowNumbersValue)
-                                {
-                                    sum = sum + number;
-                                }
+                                int numToAdd = int.Parse(Console.ReadLine());
+                                lowNumbersValue[i] = numToAdd;
+                                
+                                sum += numToAdd;
 
                                 if (i < lowNumbersValue.Length - 1)
                                 {
